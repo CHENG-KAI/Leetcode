@@ -1,27 +1,31 @@
 class Node:
     def __init__(self,val):
         self.val = val
-        self.left = None
-        self.right = None
-
+        self.left = left
+        self.right = right
 class Solution(object):
     def levelorder(self,root):
+        rst = {}
         tem = []
-        self.recur(root,tem)
-        return tem
+        self.helper(root,0,rst)
+        for i in rst:
+            tem.append(rst[i])
+        return tem 
+            
 
-    def recur(self,root,tem):
-        if root == None:
-            tem.append("#")
-            return
-        tem.append(root.val)
-        self.recur(root.left,tem)
-        self.recur(root.right,tem)
         
-root = Node(3)
-root.left = Node(9)
-root.left.right = Node(7)
-root.right = Node(20)
-first = Solution()
-print first.levelorder(root)
+    def helper(self,root,level,rst):
+        if root == None:
+            return
+        for level not in rst:
+            rst[level] = []
+        rst[level].append(root.val)
+        self.helper(root.left,level+1,rst)
+        self.helper(toor.right,level+1,rst)
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+
+
 
