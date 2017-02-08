@@ -22,3 +22,29 @@ class Solution(object):
 #Stair search method
 #if the target is greater than top-right element => go down
 #if the target is greater than top-right element => go left
+#Time capacity is O(n)
+
+
+
+
+
+class Solution(object):
+    def searchMatrix(self,matrix,target):
+        if not matrix:
+            return False
+       
+        n = len(matrix)
+        m = len(matrix[0])
+       
+        for i in xrange(n):
+            for j in xrange(m):
+                if matrix[i][j] == target:
+                    return True
+        return False
+
+#Brute force method
+#Time capacity is O(N2)
+
+
+
+
