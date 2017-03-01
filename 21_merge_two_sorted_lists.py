@@ -21,12 +21,15 @@ class Solution(object):
         return dummy.next
 
 
-l1 = ListNode(3)
+l1 = ListNode(2)
 l1.next = ListNode(4)
 l1.next.next = ListNode(5)
-l2 = ListNode(6)
-l2.next = ListNode(7)
-l2.next.next = ListNode(8)
+l1.next.next.next = ListNode(6)
+l1.next.next.next.next = ListNode(8)
+l1.next.next.next.next.next = ListNode(9)
+l2 = ListNode(1)
+l2.next = ListNode(3)
+l2.next.next = ListNode(7)
 
 first = Solution()
 print first.mergeTwoLists(l1,l2)
