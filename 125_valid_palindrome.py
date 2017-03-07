@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: bool
         """
         s = list(s.lower())
-        a = []
         b = []
         for i in s:
             if i.isalnum():
