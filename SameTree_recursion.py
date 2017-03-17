@@ -5,7 +5,7 @@ class Node:
         self.right = right
 
 
-def isSameTree(p,q):
+    def isSameTree(p,q):
         if p == None and q == None:
             return True
         elif p and q and p.val == q.val:
