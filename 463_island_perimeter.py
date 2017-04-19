@@ -30,6 +30,33 @@ class Solution(object):
         res = 0
         res = 4*(self.pre(grid))- 2*(self.cal_col(grid)) - 2*(self.cal_len(grid))
         return res
-        
+
+
+
+
+
+
+
+#Solution 2
+def islandPerimeter(grid):
+    if not grid:
+        return 0
+    width = len(grid[0])
+    height = len(grid)
+    cnt = 0
+    dec = 0
+    for i in xrange(0, height):
+        for j in xrange(0, width):
+            if grid[i][j] == 1:
+                cnt += 1
+                if j != width - 1 and grid[i][j+1] == 1:
+                    print grid[i][j+1]
+                    dec += 1    #continuous 1 in x axis
+                if i != height -1 and grid[i+1][j] == 1:
+                    dec += 1    #continuous 1 in y axis
+    return 4*cnt - 2*dec
+    
+grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
+islandPerimeter(grid)
         
         
