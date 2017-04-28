@@ -19,3 +19,14 @@ class Solution(object):
             head = next
         return prev
         
+class Solution(object):
+    def reverseList(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        pre, cur = None,head
+        while cur:
+            cur.next,pre,cur=pre,cur, cur.next
+        return pre
+
