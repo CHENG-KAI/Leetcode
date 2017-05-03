@@ -19,3 +19,24 @@ def coinChange(coins, amount):
 coins = [5]
 amount = 4
 coinChange(coins, amount)
+
+
+
+
+def coinChange(coins, amount):
+        """
+        :type coins: List[int]
+        :type amount: int
+        :rtype: int
+        """
+    mem, stk, level = {amount},{amount},0
+        
+    while stk:
+        if 0 in mem:
+            return level
+        stk = {i-j for i in stk for j in coins if i>=j and i-j not in mem}
+        mem.update(stk)
+        level +=1
+    return -1
+
+
