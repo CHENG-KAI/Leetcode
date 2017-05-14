@@ -1,4 +1,4 @@
-#dp solution O(n^2) solution
+#dp solution O(n^2) solution  https://www.youtube.com/watch?v=CE2b_-XfVDk
 def lengthOfLIS(nums):
     
     n = len(nums)
