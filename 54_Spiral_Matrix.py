@@ -55,6 +55,10 @@ class Solution(object):
         
         m = len(matrix[0])
         n = len(matrix)
+        # a,d are at orginal point
+        # d -> c horizontal
+        # a -> c vertival
+        
         a,b,c,d = 0,n,m,0
         dir = 0 
         o = []
