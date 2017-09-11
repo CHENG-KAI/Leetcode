@@ -29,11 +29,22 @@ def lengthOfLIS(nums):
             if nums[i] > nums[j]:
                 dp[i] = max(dp[i],dp[j]+1)
     print dp
-            
-            
-    
-    
-    
-    
+                   
 nums = [3,4,-1,0,6,2,3]
 lengthOfLIS(nums)
+
+
+#time complexitu is O(nlogn) :binary search takes long(n) time and it is called n times
+#space complexity is O(n) : array of size n is used
+import bisect
+
+def lengthOfLIS(nums):
+    ans = 0
+    n = len(nums)
+    if n == 0: return ans
+    dp = [0]*n # minimal val for length i+1
+    for x in nums:
+        j = bisect.bisect_left(dp[:ans], x)
+        dp[j] = x
+        if j == ans: ans += 1
+    return ans
