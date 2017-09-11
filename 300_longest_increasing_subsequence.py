@@ -17,4 +17,23 @@ nums = [10, 9, 2, 5, 3, 7, 101, 18]
 lengthOfLIS(nums)
 
 
-
+#more clear result
+#time complexitu is O(n2) : two loops of n are there
+#space complexity is O(n) : array of size n is used
+def lengthOfLIS(nums):
+    if not nums:
+        return 0
+    dp = [1]*len(nums)
+    for i in range(1,len(nums)):
+        for j in range(i):
+            if nums[i] > nums[j]:
+                dp[i] = max(dp[i],dp[j]+1)
+    print dp
+            
+            
+    
+    
+    
+    
+nums = [3,4,-1,0,6,2,3]
+lengthOfLIS(nums)
