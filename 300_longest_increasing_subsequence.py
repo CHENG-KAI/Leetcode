@@ -42,9 +42,9 @@ def lengthOfLIS(nums):
     ans = 0
     n = len(nums)
     if n == 0: return ans
-    dp = [0]*n # minimal val for length i+1
-    for x in nums:
-        j = bisect.bisect_left(dp[:ans], x)
-        dp[j] = x
+    dp = [0]*n 
+    for i in nums:
+        j = bisect.bisect_left(dp[:ans], i)
+        dp[j] = i
         if j == ans: ans += 1
     return ans
