@@ -20,3 +20,14 @@ def dfs(nums,index,path,res,k):
 n = 10
 k = 3
 print combine(n,k)
+
+
+class Solution(object):
+    def combine(self, n, k):
+        """
+        :type n: int
+        :type k: int
+        :rtype: List[List[int]]
+        """
+        import itertools 
+        return [ x for x in itertools.combinations(range(1,n+1),k)]
